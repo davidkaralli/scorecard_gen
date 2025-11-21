@@ -32,4 +32,4 @@ Unfortunately, I haven't put a lot of effort into platform independence yet.
 
 3. Edit the spreadsheet at `Options/Options_CompId.xlsx` using your favorite compatible spreadsheet editor (ideally Microsoft Excel). Choose your options using the "Value" column. Be careful not to change anything else or you'll likely break things.
 
-4. Generate the scorecard PDFs with this command: `./pdf_gen.py CompId`. This will generate PDFs in the "Scorecards" directory. Please double-check your work.
+4. Generate the scorecard PDFs with this command: `./scorecard_gen.py CompId`. This will generate PDFs in the "Scorecards" directory. Please double-check your work.
