@@ -354,7 +354,7 @@ class OptionsXLSX():
 					):
 		# Thanks ChatGPT!
 		xlsx_data = []
-		xlsx_data.append(['Name', 'Default value', 'Description'])
+		xlsx_data.append(['Name', 'Value', 'Description'])
 
 		# Data necessary to replicate the OptionsXLSX from the CSV file
 		metadata = []
