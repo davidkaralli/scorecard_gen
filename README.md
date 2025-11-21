@@ -8,7 +8,7 @@ Work-in-progress software for generating scorecards for World Cube Association (
 
 *Aphorism*
 
-This repository is a work-in-progress. It's messy, it's not very user-friendly, there's absurdly platform-dependent code, and there are a grand total of 121 TODOs. If you don't have a decent programming background, I wouldn't recommend touching it. The only reason it's on GitHub is so other delegates in my region don't have to use mail merge.
+This repository is a work-in-progress. It's messy, it's not very user-friendly, there's absurdly platform-dependent code, and there's a grand total of 121 TODOs. If you don't have a decent programming background, I wouldn't recommend touching it. The only reason it's on GitHub is so other delegates in my region don't have to use mail merge.
 
 As it stands, I'm aware of at least one reason this will not work outside of Windows Subsystem for Linux (no, I'm not kidding), and I haven't bothered to check whether there are any other platform-specific issues.
 
