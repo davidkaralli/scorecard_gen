@@ -5,7 +5,8 @@ Work-in-progress software for generating scorecards for World Cube Association (
 # A warning
 
 > Perfect is the enemy of good.
-Aphorism
+
+*Aphorism*
 
 This repository is a work-in-progress. It's messy, it's not very user-friendly, there's absurdly platform-dependent code, and there are a grand total of 121 TODOs. If you don't have a decent programming background, I wouldn't recommend touching it. The only reason it's on GitHub is so other delegates in my region don't have to use mail merge.
 
@@ -20,7 +21,7 @@ You have been warned.
 Unfortunately, I haven't put a lot of effort into platform independence yet.
 
 1. **Python version**: This was developed using Python 3.10.12. Hopefully other Python versions work.
-2. **EDITME.py**: I run this in WSL (Windows Subsystem for Linux). I haven't tested this on any other platform. If you're not using WSL, you will, at the very least, need to edit pdf_gen/EDITME.py so the PDF generation scripts use the correct font paths. (Isn't this fun?)
+2. **EDITME.py**: I run this in WSL (Windows Subsystem for Linux). I haven't tested this on any other platform. If you're not using WSL, you will, at the very least, need to edit `pdf_gen/EDITME.py` so the PDF generation scripts use the correct font paths. (Isn't this fun?)
 3. **Python packages**: Run `pip install -r requirements.txt`. Please let David know if this doesn't work.
 
 ## Using the scripts
