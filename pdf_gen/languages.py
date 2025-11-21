@@ -3,7 +3,7 @@ import math
 
 from typing import Callable, Tuple
 
-from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfbase.ttfonts import TTFont, TTFError
 from reportlab.pdfbase import pdfmetrics
 
 import arabic_reshaper
@@ -73,13 +73,8 @@ class Language():
 		self.font_path = font_path
 		self.is_char_in_language = is_char_in_language
 
-		try:
-			# TODO: warn if font is already registered? (in theory, we could override the previously registered font)
-			pdfmetrics.registerFont(TTFont(font_name, font_path))
-		except NameError:
-			# TODO: use logger
-			print(f"Warning: Path {font_path} not found for font {font_name}. Translations for language {language} will not be supported.")
-			return None
+		# Might cause an exception if the font can't be found
+		pdfmetrics.registerFont(TTFont(font_name, font_path))
 
 		if font_size < 0:
 			raise ValueError(f"font_size must be greater than 0 (value is {font_size}).")
@@ -189,9 +184,16 @@ class LanguageList():
 				  	 *args,
 					 **kwargs
 					 ):
-		language = Language(*args, **kwargs)
+		try:
+			language = Language(*args, **kwargs)
+		except TTFError:
+			# TODO: not a good way of doing this but I just wanna get it working
+			language = args[0]
+			font_name = args[1]
+			font_path = args[2]
 
-		if language != None:
+			print(f"Warning: Path {font_path} not found for font {font_name}. Translations for language {language} will not be supported.")
+		else:
 			self.language_list.append(language)
 
 	# TODO: warn if multiple matches
