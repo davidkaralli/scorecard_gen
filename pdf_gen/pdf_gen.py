@@ -1,4 +1,5 @@
 import os
+import EDITME
 
 from reportlab.pdfgen import canvas
 from reportlab.lib import colors
@@ -7,7 +8,6 @@ from reportlab.lib.utils import ImageReader
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.enums import TA_CENTER
 from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import Table, Paragraph
 from reportlab.platypus.tables import TableStyle
 
@@ -18,13 +18,6 @@ from languages import language_list
 
 PAGE_WIDTH = 8.5
 PAGE_HEIGHT = 11
-
-font_dir = os.path.join('/', 'mnt', 'c', 'Windows', 'Fonts')
-pdfmetrics.registerFont(TTFont('Arial', os.path.join(font_dir, 'arial.ttf')))
-pdfmetrics.registerFont(TTFont('ArialBd', os.path.join(font_dir, 'arialbd.ttf')))
-pdfmetrics.registerFont(TTFont('ArialI', os.path.join(font_dir, 'ariali.ttf')))
-pdfmetrics.registerFont(TTFont('ArialBI', os.path.join(font_dir, 'arialbi.ttf')))
-pdfmetrics.registerFontFamily('Arial', normal='Arial', bold='ArialBd', italic='ArialI', boldItalic='ArialBI')
 
 def gen_scorecards_pdf(competition_id: str,
 					   scorecards_dict: dict,
