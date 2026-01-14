@@ -156,6 +156,10 @@ def gen_scorecards_page(c: canvas.Canvas,
 			# (Not asking because I want to support it, asking because I want to know if I need to explicitly not support it)
 			pre_cutoff_rows = 1
 			post_cutoff_rows = 2
+		elif scorecard['format'] == '5':
+			# Best of 5
+			pre_cutoff_rows = 5
+			post_cutoff_rows = 0
 		elif scorecard['format'] == '3':
 			# Best of 3
 			pre_cutoff_rows = 3
@@ -174,7 +178,7 @@ def gen_scorecards_page(c: canvas.Canvas,
 			pre_cutoff_rows = 6
 			post_cutoff_rows = 0
 		else:
-			raise Exception(f"Format {scorecard['format']} not recognized. Must be 'a', 'm', '3', '2', or '1'.")
+			raise Exception(f"Format {scorecard['format']} not recognized. Must be 'a', 'm', '5', '3', '2', or '1'.")
 
 		y_pos = print_pre_cutoff_table(c, pre_cutoff_rows, multi_event, y_offset=y_pos - 0.05*inch)
 

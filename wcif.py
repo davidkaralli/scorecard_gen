@@ -14,6 +14,7 @@ format_dict = {
 	'1' : 'Best of 1',
 	'2' : 'Best of 2',
 	'3' : 'Best of 3',
+	'5' : 'Best of 5',
 }
 
 # Returns the WCIF JSON for a competition
