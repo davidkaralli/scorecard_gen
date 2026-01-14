@@ -1,5 +1,4 @@
 import os
-import EDITME
 
 from reportlab.pdfgen import canvas
 from reportlab.lib import colors
@@ -16,8 +15,12 @@ from io import BytesIO
 
 from languages import language_list
 
+# Needs to come AFTER language import for text to be bold... haven't debugged why
+import EDITME
+
 PAGE_WIDTH = 8.5
 PAGE_HEIGHT = 11
+
 
 def gen_scorecards_pdf(competition_id: str,
 					   scorecards_dict: dict,
@@ -138,7 +141,7 @@ def gen_scorecards_page(c: canvas.Canvas,
 
 		y_pos = print_bold_then_reg(c, time_limit_pre_colon, time_limit_post_colon, size=10, y_offset=y_pos)
 
-		y_pos = print_bold_then_reg(c, 'Penalty example', '4.25 + 2 = 6.25', size=10, y_offset=y_pos)
+		y_pos = print_bold_then_reg(c, 'Penalty example:', '4.25 + 2 = 6.25', size=10, y_offset=y_pos)
 
 		pre_cutoff_rows = 0
 		post_cutoff_rows = 0
